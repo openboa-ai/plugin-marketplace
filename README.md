@@ -11,10 +11,10 @@ The marketplace lets a client discover a plugin and decide whether it may be ins
 - Marketplace ID: `openboa-plugins`
 - Display name: `OpenBoa Plugins`
 - Entry: `hydra`
-- Source: `openboa-ai/hydra` at commit `ee67fdc39d4f4faf12bd2de38c2cc45f2105875b`
+- Source: `openboa-ai/hydra` at merged `main` commit `299e48c685cfe23314e4db265a47e3a160197fe4`
 - Installation: `NOT_AVAILABLE` while the Hydra `0.0.0` foundation is being reviewed
 
-The pinned revision is a candidate source commit, not a public release claim. After the Hydra foundation is merged, update the entry to the exact reviewed `main` commit and only then change availability as part of a release decision.
+The pinned revision is the reviewed Hydra `main` commit, not a public release claim. The entry remains unavailable until a separate release decision confirms fresh-install and evaluation evidence.
 
 ## Ownership boundaries
 

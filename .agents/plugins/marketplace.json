@@ -9,7 +9,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/openboa-ai/hydra.git",
-        "sha": "ee67fdc39d4f4faf12bd2de38c2cc45f2105875b"
+        "sha": "299e48c685cfe23314e4db265a47e3a160197fe4"
       },
       "policy": {
         "installation": "NOT_AVAILABLE",
