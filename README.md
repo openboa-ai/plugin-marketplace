@@ -12,7 +12,7 @@ The marketplace lets a client discover a plugin and decide whether it may be ins
 - Display name: `OpenBoa Plugins`
 - Entry: `hydra`
 - Source: `openboa-ai/hydra` at merged `main` commit `299e48c685cfe23314e4db265a47e3a160197fe4`
-- Installation: `NOT_AVAILABLE` while the Hydra `0.0.0` foundation is being reviewed
+- Installation: `NOT_AVAILABLE` pending fresh-install and evaluation evidence
 
 The pinned revision is the reviewed Hydra `main` commit, not a public release claim. The entry remains unavailable until a separate release decision confirms fresh-install and evaluation evidence.
 
