@@ -1,0 +1,45 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  catalog-structure:
+    name: catalog-structure
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out candidate
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Validate catalog metadata
+        run: |
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          catalog = json.loads(Path('.agents/plugins/marketplace.json').read_text())
+          assert catalog['name'] == 'openboa-plugins'
+          assert catalog['interface']['displayName'] == 'OpenBoa Plugins'
+          assert len(catalog['plugins']) == 1
+          entry = catalog['plugins'][0]
+          assert entry['name'] == 'hydra'
+          assert entry['source']['source'] == 'url'
+          assert entry['source']['url'] == 'https://github.com/openboa-ai/hydra.git'
+          assert re.fullmatch(r'[0-9a-f]{40}', entry['source']['sha'])
+          assert entry['policy']['installation'] == 'NOT_AVAILABLE'
+          assert entry['policy']['authentication'] == 'ON_INSTALL'
+          assert entry['category'] == 'Developer Tools'
+          assert not Path('plugins').exists()
+          assert not Path('hydra').exists()
+          PY
+          git diff --check

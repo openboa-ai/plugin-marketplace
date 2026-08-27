@@ -1,0 +1,21 @@
+{
+  "name": "openboa-plugins",
+  "interface": {
+    "displayName": "OpenBoa Plugins"
+  },
+  "plugins": [
+    {
+      "name": "hydra",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/openboa-ai/hydra.git",
+        "sha": "ee67fdc39d4f4faf12bd2de38c2cc45f2105875b"
+      },
+      "policy": {
+        "installation": "NOT_AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
